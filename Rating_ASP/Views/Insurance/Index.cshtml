@@ -1,0 +1,35 @@
+﻿@model List<Person>
+
+@{
+    ViewData["Title"] = "Insurance";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Insurance</h1>
+</div>
+
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ФИО</th>
+                <th>Статус</th>
+                <th>Редактировать</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var person in Model)
+            {
+                <tr>
+                    <td>@person.FIO</td>
+                    <td>@person.IsAlive</td>
+                    <td><a asp-action="Trap">Редактировать</a></td>             
+                </tr>
+              
+            }
+            <a href="/Insurance/AddPerson">Добавить клиента</a>
+        </tbody>
+    </table>
+</div>
+
